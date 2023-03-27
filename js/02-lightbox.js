@@ -19,13 +19,15 @@ const createGallery = (items) =>
 
 gallery.innerHTML = createGallery(galleryItems);
 
+const lightBox = new SimpleLightbox(".gallery a", {
+	overlayOpacity: 0.9,
+	captionsData: "alt",
+	captionDelay: 250,
+});
+
 const lockOfHref = (e) => {
 	e.preventDefault();
-	new SimpleLightbox(".gallery a", {
-		overlayOpacity: 0.9,
-		captionsData: "alt",
-		captionDelay: 250,
-	});
+	lightBox;
 };
 
 gallery.addEventListener("click", lockOfHref);
